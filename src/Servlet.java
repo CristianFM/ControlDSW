@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+
 /**
  * Servlet implementation class test
  */
@@ -19,37 +20,27 @@ import javax.servlet.http.HttpServletResponse;
 public class Servlet extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+	
     public Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
     public void init(ServletConfig config) throws ServletException {
-    	
-    	try { // load the database JDBC driver
-			Class.forName(config.getInitParameter("jdbcDriver"));
-			System.out.println("Base de datos conectada");
-		} catch (ClassNotFoundException e) {
-			System.out.println(e.toString());
-		}
     }
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
+		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
 		String[] paginas = {"www.google.es","www.amazon.es","www.terra.com.br"};
 		request.getSession().setAttribute("ArrayEnlace", paginas);
-		response.sendRedirect("/WebContent/index.jsp");
+		response.sendRedirect("/index.jsp");
+		response.getWriter().print("<ul><li>"+ paginas[0]+"</li><li>"+paginas[1]+"</li><li>"+paginas[2]+"</li></ul>");
 		
 		
 		

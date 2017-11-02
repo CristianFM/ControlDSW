@@ -13,6 +13,9 @@
 	
 	<%
 	String[] paginas = (String[])session.getAttribute("ArrayEnlace");
+	for(int x=0; x<paginas.length;x++){
+		out.println(paginas[x]);
+	}
 	%>
 	
 </body>
