@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * Servlet implementation class test
  */
@@ -27,6 +28,7 @@ public class Servlet extends javax.servlet.http.HttpServlet implements javax.ser
     }
 
     public void init(ServletConfig config) throws ServletException {
+    	
     	try { // load the database JDBC driver
 			Class.forName(config.getInitParameter("jdbcDriver"));
 			System.out.println("Base de datos conectada");
@@ -45,8 +47,11 @@ public class Servlet extends javax.servlet.http.HttpServlet implements javax.ser
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String url = "";
+		String[] paginas = {"www.google.es","www.amazon.es","www.terra.com.br"};
+		request.getSession().setAttribute("ArrayEnlace", paginas);
+		response.sendRedirect("/WebContent/index.jsp");
+		
+		
 		
 	}
 

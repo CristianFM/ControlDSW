@@ -10,10 +10,8 @@
 </head>
 <body>
 	<h1>Control DSW</h1>
-	
 	<%
-	String[] paginas = (String[])session.getAttribute("ArrayEnlace");
+	      
 	%>
-	
 </body>
 </html>
