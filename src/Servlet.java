@@ -29,6 +29,7 @@ public class Servlet extends javax.servlet.http.HttpServlet implements javax.ser
     public void init(ServletConfig config) throws ServletException {
     	try { // load the database JDBC driver
 			Class.forName(config.getInitParameter("jdbcDriver"));
+			System.out.println("Base de datos conectada");
 		} catch (ClassNotFoundException e) {
 			System.out.println(e.toString());
 		}

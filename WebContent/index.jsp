@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>somethig</title>
+<title>DSW Control</title>
 </head>
 <body>
 	<h1>Control DSW</h1>
@@ -22,9 +22,8 @@
 	enlaces.add("www.amazon.es");
 	enlaces.add("www.terra.com.br");
 	
-	Iterator it = enlacesMap.keySet().iterator(); 
-	while(it.hasNext()) {
-		out.println("<p><a href="+ enlacesMap.get(it.next()) + "> enlace "+it.next()+"</a></p>");
+	for(int x = 0; x<= enlaces.size();x++) {
+		out.println("<p><a href="+ enlaces.get(x) + "> enlace "+x+"</a></p>");
 		} 
 	      
 	%>
